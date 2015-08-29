@@ -13,12 +13,12 @@ License: GPLv2
 /*******************************************
 * Plugin CONSTANT
 ********************************************/
-define( 'RCEV_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
-define( 'RCEV_PLUGIN_URL' , plugin_dir_url( __FILE__ ) );
-define( 'RCEV_TEXT_DOMAIN', 'cherry-facilities' );
-define( 'RCEV_SLUG',        'cherry-facilities' );
+define( 'RCFA_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
+define( 'RCFA_PLUGIN_URL' , plugin_dir_url( __FILE__ ) );
+define( 'RCFA_TEXT_DOMAIN', 'cherry-facilities' );
+define( 'RCFA_SLUG',        'cherry-facilities' );
 
-define( 'RCEV_SETTINGS_KEY', 'RCEV_Gallery_Settings_');
+define( 'RCFA_SETTINGS_KEY', 'RCFA_Gallery_Settings_');
 
 /*******************************************
 * Global Variables

@@ -3,12 +3,12 @@
 /**
  * This function handle the short code
  */
-function RCEV_facilities_list( $atts, $content ) {
+function RCFA_facilities_list( $atts, $content ) {
 	global $post;
 	
 	$atts = array( // a few default values
 			'posts_per_page' => '3',
-			'post_type' => RCEV_SLUG
+			'post_type' => RCFA_SLUG
 			);
 			
 	$posts = new WP_Query( $atts );
@@ -46,7 +46,7 @@ function RCEV_facilities_list( $atts, $content ) {
 	
     return ob_get_clean();
 }
-add_shortcode( 'RCFAList', 'RCEV_facilities_list' );
+add_shortcode( 'RCFAList', 'RCFA_facilities_list' );
 
 
-// usage [RCEVList]
+// usage [RCFAList]
