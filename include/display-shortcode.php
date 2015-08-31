@@ -7,7 +7,7 @@ function RCFA_facilities_list( $atts, $content ) {
 	global $post;
 	
 	$atts = array( // a few default values
-			'posts_per_page' => '3',
+			'posts_per_page' => '6',
 			'post_type' => RCFA_SLUG
 			);
 			
@@ -21,11 +21,7 @@ function RCFA_facilities_list( $atts, $content ) {
 	    while ($posts->have_posts()) {
 	        $posts->the_post();
 			
-	        $out .= '<div class="facilities_box">
-	            <h4><a href="'.get_permalink().'" title="' . get_the_title() . '">'.get_the_title() .'</a></h4>
-	            <p class="facility_desc">'.get_the_content().'</p>';
-	            // add here more...
-	        $out .= '</div>';
+	        $out .= '<div class="facilities_box">'.get_the_post_thumbnail().'</div>';
 			
 	/* these arguments will be available from inside $content
 	    get_permalink()  
@@ -46,7 +42,7 @@ function RCFA_facilities_list( $atts, $content ) {
 	
     return ob_get_clean();
 }
-add_shortcode( 'RCFAList', 'RCFA_facilities_list' );
+add_shortcode( 'RCFacilitiesListHome', 'RCFA_facilities_list' );
 
 
-// usage [RCFAList]
+// usage [RCFacilitiesListHome]
