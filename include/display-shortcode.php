@@ -3,46 +3,40 @@
 /**
  * This function handle the short code
  */
-function RCFA_facilities_list( $atts, $content ) {
+function RCFA_facilities_list_thumb( $atts, $content ) {
 	global $post;
 	
 	$atts = array( // a few default values
-			'posts_per_page' => '6',
-			'post_type' => RCFA_SLUG
-			);
-			
-	$posts = new WP_Query( $atts );
-	$out = '';
+		'posts_per_page' => '6',
+		'post_type' => RCFA_SLUG
+		);
 	
-    ob_start();
+	$posts = new WP_Query( $atts );
+	
+	$out = '<div class="facilitiesboxcontainer">
+				<h5>Facilities</h5>
+					<div class="facilitiesbox">';
 	
 	if ($posts->have_posts()) {
-		
+	
 	    while ($posts->have_posts()) {
 	        $posts->the_post();
-			
-	        $out .= '<div class="facilities_box">'.get_the_post_thumbnail().'</div>';
-			
-	/* these arguments will be available from inside $content
-	    get_permalink()  
-	    get_the_content()
-	    get_the_category_list(', ')
-	    get_the_title()
-	    and custom fields
-	    get_post_meta($post->ID, 'field_name', true);
-	*/
-	
+	        $out .= '<div class="singlefacilitythumbbox">'.get_the_post_thumbnail().'</div>';
 		} // end while loop
-		
+	
 	} else {
 		return; // no posts found
 	}
+	$out .= '</div>'; // ending facilitiesbox
+	$out .= '</div>'; // ending facilitiesboxcontainer
 
+	ob_start();
+	
 	echo $out;
 	
     return ob_get_clean();
 }
-add_shortcode( 'RCFacilitiesListHome', 'RCFA_facilities_list' );
+add_shortcode( 'RCFacilitiesThumbnailsHome', 'RCFA_facilities_list_thumb' );
 
 
 // usage [RCFacilitiesListHome]

@@ -9,7 +9,7 @@ function RCFA_Cherry_Event_ShortCode_Detect() {
     $Posts = $wp_query->posts;
     $Pattern = get_shortcode_regex();
     foreach ($Posts as $Post) {
-		if ( strpos($Post->post_content, 'RCFacilitiesListHome' ) ) {
+		if ( strpos($Post->post_content, 'RCFacilitiesThumbnailsHome' ) ) {
 			// loading css scripts
 			wp_enqueue_style('rcev-css', RCEV_PLUGIN_URL.'css/rcfacilities.css');
 
