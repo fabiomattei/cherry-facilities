@@ -7,7 +7,7 @@
 }
 .singlefacilitythumbbox {
 	float: left;
-	margin: 0px 2% 25px !important;
+	margin: 0px 0 25px !important;
 	padding: 0 25px 0;
-	max-width: 46%;
+	max-width: 50%;
 }
