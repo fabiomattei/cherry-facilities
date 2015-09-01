@@ -3,13 +3,11 @@
 	max-width: 100%;
 }
 .facilitiesbox {
-	background-color: #000;
 	max-width: 100%;
 }
 .singlefacilitythumbbox {
 	float: left;
 	margin: 0px 2% 25px !important;
 	padding: 0 25px 0;
-	background-color: #FFFFFF;
 	max-width: 46%;
 }
