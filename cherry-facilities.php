@@ -22,7 +22,7 @@ define( 'RCFA_SETTINGS_KEY', 'RCFA_Gallery_Settings_');
 
 /*******************************************
 * Global Variables
-* variables and costants that are used 
+* variables and costants that are used
 * in this plug in
 ********************************************/
 
@@ -39,6 +39,7 @@ if ( is_admin() ) {
 
 } else {
 	// include for client side
+	include( 'include/display-functions.php');
 	include( 'include/display-shortcode.php');
-	
+
 }

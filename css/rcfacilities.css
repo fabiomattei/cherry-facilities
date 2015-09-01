@@ -1,4 +1,4 @@
-.facilitiesboxcontainer {
+.facilitiescontainer {
 	text-align: center;
 }
 .facilitiesbox {
@@ -8,15 +8,17 @@
 	-webkit-flex-direction: row;
 	-ms-flex-direction:     row;
 	flex-direction:         row;
-	-webkit-flex-wrap: overflow;
-	-ms-flex-wrap:     overflow;
-	flex-wrap:         overflow;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap:     wrap;
+	flex-wrap:         wrap;
 	-webkit-justify-content: center;
 	-ms-flex-pack:           center;
 	justify-content:         center;
+	background-color: #000;
 }
 .singlefacilitythumbbox {
-	flex: 0 0 50px;
+	flex: 0 0 100px;
 	margin: 0px 25px 25px !important;
 	padding: 0 25px 0;
+	background-color: #FFFFFF;
 }
