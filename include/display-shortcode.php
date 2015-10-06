@@ -14,7 +14,9 @@ function RCFA_facilities_list_thumb( $atts, $content ) {
 	$posts = new WP_Query( $atts );
 
 	$out = '<div class="facilitiescontainer">
-				<h5>Facilities</h5>
+				<div class="facilitiestitlewrapper">
+					<h5 class="facilitiestitle">Facilities</h5>
+				</div>
 					<div class="facilitiesbox">';
 
 	if ($posts->have_posts()) {
