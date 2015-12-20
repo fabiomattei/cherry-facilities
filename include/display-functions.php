@@ -14,7 +14,7 @@ function RCFA_Cherry_Facilities_ShortCode_Detect() {
 			wp_enqueue_style('rcfa-css', RCFA_PLUGIN_URL.'css/rcfacilities.css');
 
             break;
-        } //end of if
-    } //end of foreach
+        } // if
+    } // foreach
 }
 add_action( 'wp', 'RCFA_Cherry_Facilities_ShortCode_Detect' );

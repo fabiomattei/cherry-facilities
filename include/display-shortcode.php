@@ -17,13 +17,18 @@ function RCFA_facilities_list_thumb( $atts, $content ) {
 				<div class="facilitiestitlewrapper">
 					<h5 class="facilitiestitle">Facilities</h5>
 				</div>
-					<div class="facilitiesbox">';
+				<div class="facilitiesbox">';
 
 	if ($posts->have_posts()) {
 
 	    while ($posts->have_posts()) {
 	        $posts->the_post();
-	        $out .= '<div class="singlefacilitythumbbox">'.get_the_post_thumbnail().'</div>';
+			$thumbnail =  wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'small' ); //wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+	        $out .= '<div class="singlefacilitythumbbox">
+				<a href="'.get_permalink().'" title="' . get_the_title() . '">
+				'.get_the_post_thumbnail( $post_id, 'post-thumbnail', array( 'class' => 'list-thumb-img' ) ).'
+				<h5 class="thumb-list-title">'.get_the_title() .'</h5></a>
+				</div>';
 		} // end while loop
 
 	} else {
