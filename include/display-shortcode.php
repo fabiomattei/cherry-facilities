@@ -13,9 +13,9 @@ function RCFA_facilities_list_thumb( $atts, $content ) {
 
 	$posts = new WP_Query( $atts );
 
-	$out = '<div class="facilitiescontainer">
-				<div class="facilitiestitlewrapper">
-					<h5 class="facilitiestitle">Facilities</h5>
+	$out = '<div class="thumbnails-group-box-container">
+				<div class="thumbnails-group-title-wrapper">
+					<h5 class="thumbnails-group-title">Facilities</h5>
 				</div>
 				<div class="facilitiesbox">';
 
@@ -24,10 +24,10 @@ function RCFA_facilities_list_thumb( $atts, $content ) {
 	    while ($posts->have_posts()) {
 	        $posts->the_post();
 			$thumbnail =  wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'small' ); //wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
-	        $out .= '<div class="singlefacilitythumbbox">
+	        $out .= '<div class="thumbnails-single-thumb-box">
 				<a href="'.get_permalink().'" title="' . get_the_title() . '">
 				'.get_the_post_thumbnail( $post_id, 'post-thumbnail', array( 'class' => 'list-thumb-img' ) ).'
-				<h5 class="thumb-list-title">'.get_the_title() .'</h5></a>
+				<h5 class="thumbnails-single-thumb-title">'.get_the_title() .'</h5></a>
 				</div>';
 		} // end while loop
 
@@ -45,5 +45,4 @@ function RCFA_facilities_list_thumb( $atts, $content ) {
 }
 add_shortcode( 'RCFacilitiesThumbnailsHome', 'RCFA_facilities_list_thumb' );
 
-
-// usage [RCFacilitiesThumbnailsHome]
+// Rename to RCFacilitiesThumbnailsGroup
